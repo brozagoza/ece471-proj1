@@ -2,6 +2,11 @@
 public class CryptoFunctions implements CryptoConstants {
 
 	// Calculates the Index of Coincidence
+	//
+	// If you replace the line  iC *= (double) 1 / (s.length() * (s.length() - 1));
+	// 			     with this  iC *= (double) 26 / (s.length() * (s.length() - 1));
+	//
+	// Then the following is true:
 	// Should be between 1.50 and 2.00 for plaintext english of over 50 chars
 	// The larger the message, the closer to 1.73.
 	//
@@ -28,7 +33,7 @@ public class CryptoFunctions implements CryptoConstants {
 		return letterCount;
 	} // end letterCount
 
-	// Returns double array of frequency of letters as percents (ex: 5.34 = 5.34%)
+	// Returns array of frequency of letters as percents (ex: 5.34 = 5.34%)
 	public static double[] letterFrequency(String s) {
 		int[] letterCount = letterCount(s);
 		double[] letFreq = new double[ALPHABET_COUNT];
