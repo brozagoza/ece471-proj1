@@ -12,6 +12,17 @@ Possible Encryption Schemes:
 * One-Time Pad
 
 ### Input
-Java command line (ex: ece471-proj1 cipher1.txt)
+Java command line with text file as input file
+(ex: ece471-proj1 cipher1.txt)
 
+### Goals
+Develop logic and algorithm to determine the cipher types and decrypt the messages.
 
+Need overall strategy to reduce time complexity of cipher-cracking algorithms.
+
+Use as little human effort as possible.
+
+### Minimum Set of Required functions:
+* Frequency analysis
+* Index of Coincidence
+* Decryption function
