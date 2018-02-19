@@ -11,6 +11,9 @@ public class CryptoFunctions implements CryptoConstants {
 	// The larger the message, the closer to 1.73.
 	//
 	// If random letters, it is likely around 1.00 falling between 0.75 and 1.25
+	//
+	//Current English IC is near .7
+	//Random IC is near .3
 	public static double indexOfCoincidence(String s) {
 		double iC = 0;
 		int[] letC = letterCount(s);
@@ -44,7 +47,7 @@ public class CryptoFunctions implements CryptoConstants {
 		return letFreq;
 	}
 
-	// Decrypt Function given a key
+	// Decrypt Function given a key for V
 	public static String decrypt(String s, String key) {
 		StringBuilder strb = new StringBuilder();
 		int j = 0;

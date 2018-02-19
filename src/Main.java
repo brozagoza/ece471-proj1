@@ -1,7 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
 public class Main {
@@ -35,16 +33,17 @@ public class Main {
 			File input = new File(args[0]);
 			Scanner scanner = new Scanner(input);
 			str = scanner.nextLine();
+			scanner.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 
 		CipherCracker cracker = new CipherCracker();
-		cracker.run(toUpperNoWhiteString(pstr4));
+		cracker.run(SubstitutionCipher.runSubstitutionCipherTest(str));
 
 	} // end main
 
-	// removes whitespace and makes upercase
+	// removes whitespace and makes uppercase
 	public static String toUpperNoWhiteString(String s) {
 		StringBuilder strb = new StringBuilder();
 
