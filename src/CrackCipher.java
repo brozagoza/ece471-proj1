@@ -48,7 +48,6 @@ public class CrackCipher implements CryptoConstants {
 				+ "\n1.) Shift Cipher"
 				+ "\n2.) Substitution Cipher"
 				+ "\n3.) Vigenere Cipher"
-				+ "\n5.) Return"
 				+ "\n4.) Exit");
 		
 		System.out.print("Your choice: ");
@@ -60,12 +59,12 @@ public class CrackCipher implements CryptoConstants {
 			ShiftCipher.run(s);
 			break;
 		case 2:
-			
+			SubstitutionCipher.run(s);
 			break;
 		case 3:
 			VigenereCipher.run(s);
 			break;
-		case 5:
+		case 4:
 			System.exit(0);
 			break;
 		}

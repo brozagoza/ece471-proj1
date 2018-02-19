@@ -1,4 +1,3 @@
-import java.io.PrintWriter;
 
 public interface CryptoConstants {
 	final static int ALPHABET_COUNT = 26;
