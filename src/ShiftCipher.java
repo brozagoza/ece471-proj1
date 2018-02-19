@@ -1,6 +1,26 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 
 public class ShiftCipher implements CryptoConstants {
-
+	static PrintWriter writer;
+	
+	public static void run(String s) {
+		try {
+			writer = new PrintWriter("output-shiftcipher.txt", "UTF-8");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		writer.println(runShiftTest(s));
+		writer.close();
+		System.out.println("ShiftCipher result has been printed to output-shiftcipher.txt");
+	}
+	
 	// Runs the Shift Test and returns the shifted string that is most likely the
 	// answer
 	/*
@@ -13,7 +33,7 @@ public class ShiftCipher implements CryptoConstants {
 	 * English messages.
 	 * =============================================================================
 	 */
-	public static String runShiftTest(String s) {
+	private static String runShiftTest(String s) {
 		char[] testChars = { 'E', 'T', 'A', 'O', 'I', 'N', 'S', 'H', 'R', 'D', 'L', 'U' };
 		String[] shiftedStrs = ShiftCipherStrings(s);
 		double minDifference = Double.MAX_VALUE;
